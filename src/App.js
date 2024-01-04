@@ -22,6 +22,7 @@ const YOUR_SPOTIFY_CLIENT_SECRET =
   process.env.REACT_APP_YOUR_SPOTIFY_CLIENT_SECRET;
 const YOUR_GOOGLE_API_KEY = process.env.REACT_APP_YOUR_GOOGLE_API_KEY;
 const YOUR_GOOGLE_CX_KEY = process.env.REACT_APP_YOUR_GOOGLE_CX_KEY;
+
 const App = () => {
   const [results, setResults] = useState([]);
   const { token, error } = useSpotifyToken(

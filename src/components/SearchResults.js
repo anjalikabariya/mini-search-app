@@ -10,13 +10,13 @@ const SearchResults = ({ results }) => {
     <div>
       <h2 style={{ marginTop: 20, marginBottom: 10 }}>Search Results</h2>
       <List>
-        {results.map((item) => (
+        {results.length ? results.map((item) => (
           <Card key={item.cacheId || item.id || item.title} sx={{ maxWidth: '100%', margin: '16px' }}>
           {item.pagemap?.cse_thumbnail && (
-            <CardMedia component="img" height="140" image={item.pagemap.cse_thumbnail[0].src} alt={item.title} />
+            <CardMedia component="img" height="fit-content" image={item.pagemap.cse_thumbnail[0].src} alt={item.title} />
           )}
           {item.album?.images[0] && (
-            <CardMedia component="img" height="140" image={item.album.images[0].url} alt={item.name} />
+            <CardMedia component="img" height="fit-content" image={item.album.images[0].url} alt={item.name} />
           )}
           
           <CardContent>
@@ -27,7 +27,7 @@ const SearchResults = ({ results }) => {
             </a>
           </CardContent>
         </Card>
-        ))}
+        )) : (<Typography>hmmm....</Typography>)}
       </List>
     </div>
   );
